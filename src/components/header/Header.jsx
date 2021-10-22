@@ -10,6 +10,7 @@ import Grid from '@mui/material/Grid';
 import SvgIcon from '@mui/material/SvgIcon';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Item = styled(Paper)(({ theme }) => ({
   // ...theme.typography.body2,
@@ -38,7 +39,9 @@ export default function Header() {
         <Logo/>
         </Grid>
 
-        <Grid item xs={4}>
+        <Grid item xs={4} className={classNames(styles.gridInput)}>
+        <Button href="#text-buttons"><SearchIcon/></Button>
+        {/* <SearchIcon/> */}
         <input className={classNames(styles.input)} type="text" placeholder="Find items,users and activities"></input>
         </Grid>
 

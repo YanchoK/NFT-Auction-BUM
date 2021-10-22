@@ -13,7 +13,15 @@
   border: solid 1px colors.$primary_main;
 }
 
-.input[type=text]{
+.input{
+  width: 300px;;
+  border:none;
+  background-color: black;
+  padding: 10px;
+  color: white;
+  background-color: colors.$background_default;
+}
+.gridInput{
   width: 300px;;
   border:none;
   background-color: black;
