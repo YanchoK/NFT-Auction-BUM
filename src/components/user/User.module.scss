@@ -1,0 +1,25 @@
+@use "../../styles/colors";
+
+
+.user{
+// border: 2px red solid; 
+border-radius: 8px;
+color: black; 
+align-items: center;  
+}
+.wrapper{
+
+}
+
+.name{
+    font-size: 1rem;
+    font-weight: bold;
+    color: colors.$text_primary;
+    margin: 1rem 0rem 0rem 0rem ;   
+}
+
+.info{
+    font-size: 0.9rem;  
+    color: colors.$info_main;
+    margin: -0.3rem 0rem 0rem 0rem ;    
+}
