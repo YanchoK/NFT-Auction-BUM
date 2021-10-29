@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
 // const URL="D:\1. Programming\Boom.dev\Projects\nft-auction-bum\public\images\avatar.png";
 //
 
-export default function Card({ name = "", likes = 0, mediaUrl = "", user = { avatarUrl: "", verified: false }, price = "", curency = "" }) {
+export default function Card({ name = "", likes = 0, mediaUrl = "", user = { avatarUrl: "", verified: false }, price = "", currency = "" }) {
 
     return (
         <div className={classNames(styles.card)} >
@@ -25,7 +25,7 @@ export default function Card({ name = "", likes = 0, mediaUrl = "", user = { ava
                 })}
             </button>
             <p className={classNames(styles.price)}>
-                {`${price} ${curency}`}
+                {`~${price} ${currency}`}
             </p>
         </div>
     );
