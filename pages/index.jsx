@@ -6,7 +6,20 @@ import User from "../src/components/user/User"
 import Card from "../src/components/card/Card"
 
 
+const card = 
+  {
+      name : 'Clock',
+      likes : 1100,
+      mediaUrl : 'images/nft.jpg',
+      user : {
+        avatarUrl : 'images/avatar.png',
+        verified : true,
+      },
+      price : '~12.2',
+      currency : 'ETH',
+  }
+
 export default function Index() {
-  // return <User name='terika77' info='134 items' avatar="D:\1. Programming\Boom.dev\Projects\nft-auction-bum\public\images\avatar.png" />;
-  return <Card name="Clock" likes={1100} mediaUrl='../public/images/nft.jpg' user={{ avatarUrl: '../public/images/avatar.png', verified: false }} price="12.2" currency="ETH" />
+  return <Card {...card} />
 }
+

@@ -1,13 +1,18 @@
-@use "../../styles/colors";
-
-.avatar {
-    // border: 2px solid red;
-    border-radius: 90px;
-  }
-.image{
-    height: 100%;
-    width: 100%;
-//   border: 2px solid blue;
+.container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
-.badge{
+
+.image {
+  border-radius: 50%;
+  width: inherit;
+  height: 100%;
+}
+
+.badge {
+  position: absolute;
+  padding-left: 90px;
+  padding-top: 50px;
+  width: 130px;
 }

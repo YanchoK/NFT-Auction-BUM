@@ -1,32 +1,40 @@
-import styles from "./Card.module.scss";
-import classNames from "classnames";
-import * as React from 'react';
-import Avatar from '../avatar/Avatar'
+import MuiCard from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import Chip from "@mui/material/Chip";
+import Stack from '@mui/material/Stack';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import Box from "@mui/material/Box"
+import styles from "./Card.module.scss";
+import Avatar from "../avatar/Avatar"
 import millify from "millify";
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 
-// const URL="D:\1. Programming\Boom.dev\Projects\nft-auction-bum\public\images\avatar.png";
-//
-
-export default function Card({ name = "", likes = 0, mediaUrl = "", user = { avatarUrl: "", verified: false }, price = "", currency = "" }) {
-
+export default function Card({ name = "", likes = 0, user = {}, mediaUrl = "", price = 0, currency = "" }) {
     return (
-        <div className={classNames(styles.card)} >
-            <Avatar url={user.avatarUrl} verified={user.verified} />
-            <img className={classNames(styles.media)} src={mediaUrl}></img>
-            <h3 className={classNames(styles.title)}>{name}</h3>
-            <button className={classNames(styles.likes)}>
-                <FavoriteIcon />
-                {millify(likes, {
-                    precision: 1,
-                    lowercase: true
-                })}
-            </button>
-            <p className={classNames(styles.price)}>
-                {`~${price} ${currency}`}
-            </p>
-        </div>
+        <MuiCard className={styles.card}>
+            <CardHeader
+                avatar={
+                    <Avatar url={user.avatarUrl} verified={user.verified} />
+                }
+            />
+            <CardMedia className={styles.media}
+                image={mediaUrl}
+            />
+            <CardContent className={styles.content}>
+                <Box>
+                    <div className={styles.title}>{name}</div>
+                    <div className={styles.price}>{price + " " + currency}</div>
+                </Box>
+                <Stack direction="row" spacing={1}>
+                    <Chip className={styles.likes}
+                        icon={<FavoriteIcon />}
+                        label={millify(likes)}
+                        onClick={handleLikeButton}
+                        variant='outlined'
+                        color='success' />
+                </Stack>
+            </CardContent>
+        </MuiCard>
     );
 }
