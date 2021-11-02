@@ -30,7 +30,6 @@ export default function Card({ name = "", likes = 0, user = {}, mediaUrl = "", p
                     <Chip className={styles.likes}
                         icon={<FavoriteIcon />}
                         label={millify(likes)}
-                        onClick={handleLikeButton}
                         variant='outlined'
                         color='success' />
                 </Stack>
