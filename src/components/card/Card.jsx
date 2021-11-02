@@ -9,6 +9,7 @@ import Box from "@mui/material/Box"
 import styles from "./Card.module.scss";
 import Avatar from "../avatar/Avatar"
 import millify from "millify";
+import classNames from "classnames";
 
 export default function Card({ name = "", likes = 0, user = {}, mediaUrl = "", price = 0, currency = "" }) {
     return (
@@ -18,21 +19,23 @@ export default function Card({ name = "", likes = 0, user = {}, mediaUrl = "", p
                     <Avatar url={user.avatarUrl} verified={user.verified} />
                 }
             />
-            <CardMedia className={styles.media}
-                image={mediaUrl}
-            />
+            <div >
+                <img src={mediaUrl} className={classNames(styles.media)}></img>
+            </div>
             <CardContent className={styles.content}>
                 <Box>
                     <div className={styles.title}>{name}</div>
-                    <div className={styles.price}>{price + " " + currency}</div>
+                    <div className={styles.price}>{"~"+price + " " + currency}</div>
                 </Box>
-                <Stack direction="row" spacing={1}>
-                    <Chip className={styles.likes}
+                <div className='likes'>
+                <Stack direction="row" spacing={1} >
+                    <Chip 
                         icon={<FavoriteIcon />}
                         label={millify(likes)}
                         variant='outlined'
                         color='success' />
                 </Stack>
+                </div>
             </CardContent>
         </MuiCard>
     );

@@ -15,7 +15,7 @@ const card =
         avatarUrl : 'images/avatar.png',
         verified : true,
       },
-      price : '~12.2',
+      price : '12.2',
       currency : 'ETH',
   }
 
