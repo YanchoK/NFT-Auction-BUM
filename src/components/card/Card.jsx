@@ -16,7 +16,7 @@ export default function Card({ name = "", likes = 0, user = {}, mediaUrl = "", p
         <MuiCard className={styles.card}>
             <CardHeader
                 avatar={
-                    <Avatar url={user.avatarUrl} verified={user.verified} />
+                    <Avatar url={user.avatarUrl} verified={user.verified} size='55px' />
                 }
             />
             <div >
