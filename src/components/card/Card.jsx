@@ -1,6 +1,5 @@
 import MuiCard from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Chip from "@mui/material/Chip";
 import Stack from '@mui/material/Stack';
@@ -10,8 +9,11 @@ import styles from "./Card.module.scss";
 import Avatar from "../avatar/Avatar"
 import millify from "millify";
 import classNames from "classnames";
+import Grid from "@mui/material/Grid"
+import Countdown from 'react-countdown';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
-export default function Card({ name = "", likes = 0, user = {}, mediaUrl = "", price = 0, currency = "" }) {
+export default function Card({ name = "", likes = 0, user = {}, mediaUrl = "", price = 0, currency = "",timeLeft=0 }) {
     return (
         <MuiCard className={styles.card}>
             <CardHeader
@@ -19,6 +21,7 @@ export default function Card({ name = "", likes = 0, user = {}, mediaUrl = "", p
                     <Avatar url={user.avatarUrl} verified={user.verified} size='55px' />
                 }
             />
+             {timeLeft ? <LiveCard timeLeft={timeLeft} /> : null}
             <div >
                 <img src={mediaUrl} className={classNames(styles.media)}></img>
             </div>
@@ -38,5 +41,21 @@ export default function Card({ name = "", likes = 0, user = {}, mediaUrl = "", p
                 </div>
             </CardContent>
         </MuiCard>
+    );
+}
+
+function LiveCard({ timeLeft = 0 }) {
+    return (
+        <div className={styles.liveCardWrapper}>
+            <Grid container className={styles.grid}>
+                <Grid item className={styles.badge}>
+                    <FiberManualRecordIcon style={{color: 'black'}}/>
+                    <div className={styles.live}>LIVE</div>
+                </Grid>
+                <Grid item className={styles.counter}>
+                    <Countdown className={styles.counterContent} date={Date.now() + timeLeft * 100000} />
+                </Grid>
+            </Grid>
+        </div>
     );
 }
