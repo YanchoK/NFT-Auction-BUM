@@ -5,6 +5,7 @@ import Avatar from "../src/components/avatar/Avatar"
 import User from "../src/components/user/User"
 import Card from "../src/components/card/Card"
 import Trending from "../src/components/trending/Trending";
+import Auctions from "../src/components/auction/Auctions";
 
 
 const cards = [
@@ -106,6 +107,7 @@ const liveCards = [
 ]
 
 export default function Index() {
-  return <Trending cards={liveCards} />
+  return <Auctions cards={liveCards} />
+  
 }
 
