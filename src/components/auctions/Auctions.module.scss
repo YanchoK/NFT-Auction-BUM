@@ -1,0 +1,20 @@
+.wrapper {
+    padding-top: 50px;
+}
+.container {
+    padding: 0px !important;
+}
+.gridContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title {
+    font-weight: bold;
+    font-size: 3.9rem;
+}
+.cards {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}

@@ -1,0 +1,32 @@
+@use "../../styles/colors";
+
+.wrapper {
+  padding: 100px;
+  background-color: colors.$background_paper;
+}
+
+.container {
+  padding: 1rem;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px colors.$primary_main;
+}
+
+.input{
+  width: 300px;;
+  border:none;
+  background-color: black;
+  padding: 10px;
+  color: white;
+  background-color: colors.$background_default;
+}
+.gridInput{
+  width: 300px;;
+  border:none;
+  background-color: black;
+  border-radius: 40px;
+  padding: 10px;
+  color: white;
+  background-color: colors.$background_default;
+}

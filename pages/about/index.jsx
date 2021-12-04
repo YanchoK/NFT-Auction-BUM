@@ -9,7 +9,7 @@ export default function About() {
     <Container maxWidth="sm">
       <Grid container justifyContent="center">
         <Grid item>
-          <Button variant="contained" component={Link} noLinkStyle href="/">
+          <Button variant="contained" component={Link} noLinkStyle href="https://gitlab.com/boom.dev-tasks/nft-auction-bum/-/tree/master">
             🏠 Home
           </Button>
         </Grid>
