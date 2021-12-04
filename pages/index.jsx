@@ -9,7 +9,7 @@ import Auctions from "../src/components/auctions/Auctions";
 import dataNfts from "../data/nfts.json";
 import { useState, useEffect } from "react";
 import Footer from "../src/components/footer/Footer";
-import Step from "../src/components/step/Step";
+// import Step from "../src/components/step/Step";
 import How from "../src/components/how/How";
 
 const stepsData =
@@ -42,8 +42,8 @@ const howData = {
   link: "String"
 }
 
-const step = <Step number="1" title="Digital Currency"
-  description="You can get ETH, the digital currency that fuels transactions on the Ethereum blockchain, from a digital currency exchange" />
+// const step = <Step number="1" title="Digital Currency"
+  // description="You can get ETH, the digital currency that fuels transactions on the Ethereum blockchain, from a digital currency exchange" />
 
 export default function Index() {
   return <How {...howData}/>
